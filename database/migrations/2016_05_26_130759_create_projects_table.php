@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateProjectsTable extends Migration
 {
@@ -12,7 +12,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        echo "Migrating: ".(new ReflectionClass($this))->getFileName()." ";
+        echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
         Schema::create('projects', function(Blueprint $table) {
             $table->increments('id');
@@ -48,7 +48,7 @@ class CreateProjectsTable extends Migration
             $table->unique(['project_id', 'user_id']);
         });
 
-        echo "[SUCCESS]".PHP_EOL;
+        echo '[SUCCESS]'.PHP_EOL;
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateLabelsTable extends Migration
 {
@@ -12,7 +12,7 @@ class CreateLabelsTable extends Migration
      */
     public function up()
     {
-        echo "Migrating: ".(new ReflectionClass($this))->getFileName()." ";
+        echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
         Schema::create('labels', function(Blueprint $table) {
             $table->increments('id');
@@ -28,7 +28,7 @@ class CreateLabelsTable extends Migration
             $table->unique(['name', 'project_id']);
         });
 
-        echo "[SUCCESS]".PHP_EOL;
+        echo '[SUCCESS]'.PHP_EOL;
     }
 
     /**
