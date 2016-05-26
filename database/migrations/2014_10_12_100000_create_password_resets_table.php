@@ -12,15 +12,15 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        print "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
-        
+        echo "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
+
         Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
             $table->string('token')->index();
             $table->timestamp('created_at');
         });
 
-        print "[SUCCESS]" . PHP_EOL;
+        echo "[SUCCESS]" . PHP_EOL;
     }
 
     /**

@@ -12,8 +12,8 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        print "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
-        
+        echo "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
+
         Schema::create('tasks', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -37,7 +37,7 @@ class CreateTasksTable extends Migration
             $table->unique(['name', 'project_id']);
         });
 
-        print "[SUCCESS]" . PHP_EOL;
+        echo "[SUCCESS]" . PHP_EOL;
     }
 
     /**

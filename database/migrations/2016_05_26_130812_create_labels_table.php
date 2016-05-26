@@ -12,8 +12,8 @@ class CreateLabelsTable extends Migration
      */
     public function up()
     {
-        print "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
-        
+        echo "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
+
         Schema::create('labels', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -28,7 +28,7 @@ class CreateLabelsTable extends Migration
             $table->unique(['name', 'project_id']);
         });
 
-        print "[SUCCESS]" . PHP_EOL;
+        echo "[SUCCESS]" . PHP_EOL;
     }
 
     /**
