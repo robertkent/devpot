@@ -12,7 +12,7 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        echo "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
+        echo "Migrating: ".(new ReflectionClass($this))->getFileName()." ";
 
         Schema::create('password_resets', function (Blueprint $table) {
             $table->string('email')->index();
@@ -20,7 +20,7 @@ class CreatePasswordResetsTable extends Migration
             $table->timestamp('created_at');
         });
 
-        echo "[SUCCESS]" . PHP_EOL;
+        echo "[SUCCESS]".PHP_EOL;
     }
 
     /**

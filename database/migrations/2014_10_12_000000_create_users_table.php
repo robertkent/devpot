@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        echo "Migrating: " . (new ReflectionClass($this))->getFileName() . " ";
+        echo "Migrating: ".(new ReflectionClass($this))->getFileName()." ";
         
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        echo "[SUCCESS]" . PHP_EOL;
+        echo "[SUCCESS]".PHP_EOL;
     }
 
     /**
