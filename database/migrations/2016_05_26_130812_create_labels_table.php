@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateUsersTable extends Migration
+class CreateLabelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,18 @@ class CreateUsersTable extends Migration
     {
         echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('labels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->text('description');
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
             $table->timestamps();
+            $table->unique(['name', 'project_id']);
         });
 
         echo '[SUCCESS]'.PHP_EOL;
@@ -33,6 +38,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('labels');
     }
 }

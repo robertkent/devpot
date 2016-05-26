@@ -31,6 +31,20 @@ class AuthController extends Controller
     protected $redirectTo = '/';
 
     /**
+     * The view which users should use when logging in.
+     *
+     * @var string
+     */
+    protected $loginView = 'login';
+
+    /**
+     * The name of the attribute which should be taken as the users id.
+     *
+     * @var string
+     */
+    protected $username = 'email';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
