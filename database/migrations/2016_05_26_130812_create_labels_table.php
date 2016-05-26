@@ -14,7 +14,7 @@ class CreateLabelsTable extends Migration
     {
         echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
-        Schema::create('labels', function(Blueprint $table) {
+        Schema::create('labels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description');

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTasksTable extends Migration
 {
@@ -14,7 +14,7 @@ class CreateTasksTable extends Migration
     {
         echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
-        Schema::create('tasks', function(Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description');

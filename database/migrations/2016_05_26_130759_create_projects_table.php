@@ -14,7 +14,7 @@ class CreateProjectsTable extends Migration
     {
         echo 'Migrating: '.(new ReflectionClass($this))->getFileName().' ';
 
-        Schema::create('projects', function(Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('description');
@@ -29,7 +29,7 @@ class CreateProjectsTable extends Migration
             $table->unique(['name', 'owner_id']);
         });
 
-        Schema::create('project_collaborators', function(Blueprint $table) {
+        Schema::create('project_collaborators', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned();
             $table->foreign('project_id')
